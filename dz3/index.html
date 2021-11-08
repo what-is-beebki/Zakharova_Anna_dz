@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">	
+		<title>mhmmmm</title>
+		<style>
+			@font-face
+			{
+				font-family: Lobster;
+				src: url(fonts/Lobster.ttf);
+			}
+			:root
+			{
+				--man_size: 160px;
+			}
+			.lob
+			{
+				font-family: Lobster;
+				text-align: center;
+			}			
+			
+			body 
+			{
+				background: url(betonnaya_plita_5.jpg) 10%;
+			}
+			
+			#vibecheck
+			{
+				vertical-align: bottom;
+				width: calc(100% - 10px - 4px);
+				margin: 0 5px 5px 5px;
+			}
+			
+			div.nig
+			{
+				background: url(malevich.jpg);
+				height: 360px;
+				width: 360px;
+				position: relative; 
+				left: 10%;
+				margin-top: 1em;
+			}
+			
+			div.nig:hover
+			{
+				background-position: 0 -360px;
+			}
+			a:visited
+			{
+				color: #0000EE;
+			}
+			
+			#dembg
+			{
+				background-color: black;
+				width: 70%;
+			}
+						
+			#dempic
+			{
+				width: calc(100% - 6px);
+				border: 3px solid black;
+			}
+			
+			#demframe
+			{
+				width: calc(100% - 2in);
+				border: 3px solid white;
+				margin: 1in 1in 0 1in;
+				<!--если делать вот так, то отступа вообще не будет
+					очень странно, ведь по идее разницы быть не должно
+					не знаю
+				margin-top: 1in;
+				margin-left: 1in;
+				margin-right: 1in;-->
+			}
+			
+			#text
+			{
+				color: white;
+				text-align: center;
+				font-family: times new roman;
+				font-size: 4.5em;
+			}
+			#bottomtext
+			{
+				color: white;
+				text-align: center;
+				font-family: sans-serif;
+				font-size: 1.5em;
+				margin-bottom: 0.5in;
+			}
+			
+			div.menu
+			{
+				background-color: rgba(255,255,255,0.7);
+				font-size: 2em;
+				text-align: center;
+				left: 10px;
+				right: 10px;
+				top: 10px;
+				position: sticky;
+			}
+			
+			.vverh
+			{
+				bottom: 10px;
+				right: 10px;
+				width: 160px;
+				font-size: 1em;
+				position: fixed;
+				background-color: #FDDDE6;
+				border: 1px solid #EBC7DF;
+				cursor: pointer;
+			}
+			
+			h1
+			{
+				font-size: 2.5em;
+				background-color: rgba(255,255,255,0.8);
+			}
+			
+			nav>a::before
+			{
+				content: "♂";
+			}
+			nav>a::after
+			{
+				content: "♂";
+			}
+			
+			
+			#man
+			{
+				position: absolute;
+				left: 60vw;
+				height: var(--man_size);
+			}
+			
+			#mantext
+			{
+				background-color: rgba(255,255,255,0.7);
+				min-width: 380px;
+				height: var(--man_size);
+				width: calc(60vw - 20px);
+			}
+			
+			a img
+			{
+				border: 2px dashed #E3A9BE;
+			}
+			
+			header~p
+			{
+				font-size: 18pt;
+				padding-left: 5em;
+				background-color: #FFFFFF88;
+			}
+			
+			li.based
+			{
+				font-family: sans-serif;
+				font-size: 14pt;
+				background-color: white;
+			}
+			
+			#stylish
+			{
+				color: cyan;
+				background-color: magenta;
+			}
+		</style>
+	</head>
+	<body>
+		<div class=vverh>
+			<p class=lob>дай курсор потрогать</p>
+			<a href="#top"><img id="vibecheck" src="тык.jpg" ></img></a>			
+		</div>
+		<div class=menu><nav style="margin: 20px 0 20px 0">
+			
+				<a href=#top>Навигация</a> |
+				<a href=#on_the_way>Идущий К Реке</a> |
+				<a href=#demotivator>Демотиватор</a> |
+				<a href=#malevich>Квадрат Малевича</a> |
+				<a href=#disp>Доделываю</a>
+			
+		</nav></div>
+
+		<article>
+			<details style="background-color: #FDDDE6AA; margin: 1rem;">
+				<summary style="padding: 1.5rem 1.5rem 0 1.5rem"><h1>Навигация по пунктам дз</h1></summary>
+				<ol>
+					<li>
+						<p>Использовать 3 взаимосвязи селекторов (пробел, &gt, +, ~).</p>
+						<ul>
+							<li>a img</li>
+							<li>nav&gta </li>
+							<li>header~p</li>
+						</ul>
+					</li>
+					<li>
+						<p>Использовать селекторы по: классу, имени тега, ID.</p>
+						<ul>
+							<li>класс - .lob</li>
+							<li>имя тега - h1</li>
+							<li>ID - bottomtext</li>
+						</ul>
+					</li>
+					<li>
+						<p>Использовать два любых псевдоселектора.</p>
+						<ul>
+							<li>div.nig:hover (в <a href=#malevich>квадрате)</a></li>
+							<li>a:visited (другой цвет для всех посещённых ссылок)</li>
+						</ul>
+					</li>
+					<li>
+						<p>Использовать оба псевдокласса ::before и ::after.</p>
+						<ul>
+							<li>nav&gta::before </li>
+							<li>nav&gta::after </li>
+						</ul>
+					</li>
+					<li>
+						<p>Использовать var и calc.</p>
+						<ul>
+							<li>var --man_size внутри #man и #mantext (объявлена в :root)</li>
+							<li>calc внутри #dempic</li>
+						</ul>
+					</li>
+					<li>
+						<p>Использовать em, rem — с демонстрацией разницы, а также показать разницу использования em для font-size и других свойств.</p>
+						<ul style="font-size: 0.6cm">
+							<li style="font-size: 1em">посмотрите</li>
+							<li style="font-size: 1rem">код</li>
+							<li style="font-size: 1cm; padding: 0.5em 0 0.5em 1.5em; border: 1px solid #E3A9BE">этого</li>
+							<li style="font-size: 1cm; padding: 0.5rem 0 0.5rem 1.5rem; border: 1px solid #E3A9BE">списка</li>
+						</ul>
+					</li>
+					<li>
+						<p>Использовать px, %, cm.</p>
+						<ul>
+							<li>px - #dembg</li>
+							<li>%, cm - #demframe (вместо cm - in, надеюсь, не страшно)</li>
+						</ul>
+					</li>
+					<li>
+						<p>Испробовать все виды display и position.</p>
+						<p>display - их <a href="https://www.w3schools.com/cssref/pr_class_display.asp" target=_blank>там</a> 23, с меня хватило четырёх</p>
+						<ul>
+							<li>они показаны<a href=#disp>вот в этом разделе</a></li>
+						</ul>
+						<p>position:</p>
+						<ul>
+							<li style="position: static">static - буквально этот же элемент списка</li>
+							<li>relative - <a href=#malevich>квадрат Малевича</a></li>
+							<li>fixed - смайлик справа внизу, который хочет потрогать Ваш курсор</li>
+							<li>absolute - изображение <a href=#man>Идущего к реке</a></li>
+							<li>sticky - плашка вверху страницы</li>
+						</ul>
+					</li>
+					<li>
+						<p>Продемонстрировать работу каскада каскадных стилей.</p>
+						<ul>
+							<li class="based">этот и два последующих элемента принадлежат классу based</li>
+							<li class="based" id="stylish">но у этого элемента другой фон, потому что так работают каскады</li>
+							<li class="based">это сочетание цветов ужасно</li>
+						</ul>
+					</li>
+					<li>
+						<p>Использовать 1 свойство, которое мы не проходили.</p>
+						<ul>
+							<li>cursor: pointer (дайте курсор потрогать)</li>
+						</ul>
+					</li>
+				</ol>
+			</details>
+			
+			<section id="on_the_way">
+				<header><h1 class="lob">Идущий К Реке.</h1></header>
+				<img id=man src="man.jpg"></img>
+				<iframe id=mantext src="on the way to the river.txt"></iframe>
+			</section>
+						
+			<section id="demotivator">
+				<header><h1 class="lob">Демотиватор. Но есть нюанс.</h1></header>
+				<p>я не знаю как сделать, чтобы отступ сверху от картинки тоже был чёрным</p>
+				<div id=dembg>
+					<table>
+						<tbody>
+							<tr>
+								<div id=demframe>
+									<img id=dempic src="дем.jpg"></img>
+								</div>
+							</tr>
+							<tr>
+								<div id="text" contenteditable="true">HTML-демотиватор</div>
+							</tr>
+							<tr>
+								<div id="bottomtext" contenteditable="true">Нижний текст</div>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p>В эти поля можно добавить свой текст. Возможно, когда-нибудь я научусь делать так, чтобы можно было добавить и свою картинку</p>
+			</section>
+			
+			<section id=malevich>
+				<header><h1 class="lob">"Чёрный квадрат" Малевича</h1></header>
+				<p>Говорят, если навести на него курсор, то он станет ещё чернее. Примерно как мои шутки.</p>
+				<div class=nig></div>
+			</section>
+			
+			<section id="disp">
+				<header><h1 class="lob">Доделываю</h1></header>
+				<p>none:</p>
+					<img src="prism_1.png" style="display: none"></img>
+					<img src="prism_2.png" style="display: none"></img>
+					<img src="prism_3.png" style="display: none"></img>
+				<p>На самом деле здесь есть картинки. Их просто нет.</p>
+				<p>block:</p>
+					<img src="prism_1.png" style="display: block"></img>
+					<img src="prism_2.png" style="display: block"></img>
+					<img src="prism_3.png" style="display: block"></img>
+				<p>inline:</p>
+					<img src="prism_1.png" style="display: inline"></img>
+					<img src="prism_2.png" style="display: inline"></img>
+					<img src="prism_3.png" style="display: inline"></img>
+				<p>inline-block:</p>
+					<img src="prism_1.png" style="display: inline-block"></img>
+					<img src="prism_2.png" style="display: inline-block; width: 250px;"></img>
+					<img src="prism_3.png" style="display: inline-block"></img>
+				<p>туториал говорит, что для инлайн-блочных элементов можно задавать размер</p>
+			</section>
+			
+		</article>
+		</div>
+	</body>
+</html>
