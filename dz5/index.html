@@ -154,6 +154,13 @@
 					{return this._missedAssignments;}
 					
 					#secret = "а мой брат кота купил";
+					tellus(sugar_level)
+					{
+						if (sugar_level >= 100)
+							console.log("Дима Зуев: ладно.", this.#secret);
+						else
+							console.log("Дима Зуев: нет");
+					}
 					constructor(dolgi)
 					{
 						this._missedAssignments = dolgi;
@@ -169,11 +176,15 @@
 					console.log("Дима Зуев: у меня %d пересдача", dimaZ.missedAssignments);
 					console.log("Дима Зуев: так стоп");
 					console.log("После этих слов его больше никто не видел");
-				/*  вот эта штука не работает, и не то что бы я возражала, но мне не очень понятно, в чём тогда заключается задание
-				try {console.log(dimaZ.#secret)}
-				catch (error){console.log("тссс... никто не должен знать")}
-					есть ещё такая приколюха, что приватные свойства не наследуются, но опять же, это не удается показать наглядно
-				*/
+				
+				let sugar_level = 15;
+					console.log("Димка, расскажи секрет");
+					dimaZ.tellus(sugar_level);
+					console.log("будем кормить Димочку сахаром, пока он не расколется");
+					for (;sugar_level <= 119; sugar_level += 20)
+					{
+						dimaZ.tellus(sugar_level);
+					}
 				
 				let bebra = {
 					switch() {
