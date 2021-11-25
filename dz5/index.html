@@ -125,22 +125,26 @@
 					dimaZ.cheers();
 			}
 			
-			{
-				
-				function whatnext()
+			{				
+				function jjpp()
 				{
-					console.log("что дальше? чайник с функцией печати в консоль?");
+					console.log(this.psina);
 				}
 				
 				class teapot
 				{
 					ffunc()
 					{
-						whatnext.call();
+						this.psina = "что дальше? чайник с функцией печати в консоль?";
+						jjpp.call(this);
 					}
 				}
 				let tchay = new teapot();
+				console.log("***********************************************");
+				//это выделение, чтобы было легче искать глазами следующую строку в консоли
 				tchay.ffunc();
+				console.log("***********************************************");
+				//по-моему легче не стало. неважно.
 			}
 			
 			{
