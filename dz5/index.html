@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">	
+		<title>mhmmmm</title>
+		
+		<script>
+			{
+				"use strict"
+				/*
+				function ppprint(obj)
+					{
+						for (let i of Object.keys(obj))
+							console.log("%s: %s", i, obj[i]);
+					}
+				*/
+				class Human
+				{
+					constructor(nage, srights, sfortune)
+					{
+						this.age = nage;
+						this.rights = srights;
+						this.fortune = sfortune;
+						this.ribs = 24;
+					}
+					pprint()
+						{
+							for (let i of Object.keys(this))
+							console.log("    %s: %s", i, this[i]);
+						}
+				}
+				
+				class Male extends Human
+				{
+					constructor(nage, sfortune)
+					{
+						super(nage, "есть", sfortune);
+						this.ribs = 23;
+					}
+				}
+				
+				class Female extends Human
+				{
+					constructor(nage, sfortune)
+					{
+						super(nage, "нет", sfortune);
+						this.location = "на кухне";
+					}
+				}
+				
+				let ded = new Male(84, "шизофрения");
+					console.log("ded properties");
+					ded.pprint();
+				let zina = new Female(33, "15 рублей");
+					console.log("zina properties");
+					zina.pprint();
+				let vnuk = Object.create(ded);
+					vnuk.age = 10;
+					console.log("vnuk properties");
+					vnuk.pprint();
+					console.log("у меня ушло некоторое время на то, чтобы понять, что унаследованные свойства являются неперечисляемыми");
+					console.log("    rights: %s\n    fortune: %s\n    ribs: %d", vnuk.rights, vnuk.fortune, vnuk.ribs);
+					
+					console.log("vnuk prototype: %s", Object.getPrototypeOf(vnuk));//какой ужас сотворило приведение типов
+					console.log("что ж.\n21 век.\nнадо сменить кому-нибудь пол.");
+					Object.setPrototypeOf(vnuk, zina);
+					console.log("vnuk new properties");
+					vnuk.pprint();
+					console.log("    rights: %s\n    fortune: %s\n    ribs: %d\n    location:", vnuk.rights, vnuk.fortune, vnuk.ribs, vnuk.location);
+					console.log("как мы видим, такие вещи до добра не доводят");
+			}
+			
+			{
+				//2. вып. в первом блоке
+			}
+			
+			{
+				//3. вып. в первом блоке
+			}
+			
+			{
+				let anek = {
+								s0: "Анек про шушунчика",
+								s1: "    Поезд, купе. Едет мужик с портфелем.",
+								s2: "    Проходит проводница, говорит:\n    - Чай, кофе",
+								s3: " 	 Мужик:\n    - Два чая, для меня и шушунчика.",
+								s4: "	 Проводница покосилась, все соседи купе тоже, но ничего не сказали. Проводница приносит два чая и ставит на стол. Мужик ставит один чай перед собой, а второй кладёт в портфель. Соседи побледнели, но молчат.",
+								s5: "	 Едут дальше. Проводница:\n    - Газеты, кроссворды, журналы",
+								s6: "	 Мужик:\n    - Две газеты, мне и шушунчику",
+								s7: "	 Проводница уже не удивляясь отдаёт мужику газеты и уходит. Он кладёт одну на стол, а вторую суёт в портфель и быстро закрывает. Соседи ни слова не сказали за всю поездку, только смотрят то на мужика, то на портфель.",
+								s8: "	 Вдруг мужик решил сходить в туалет. Вышел, соседи тут же к портфелю. Открывают портфель, а там...",
+								
+								pprint()
+								{
+									for (let i of Object.keys(this))
+										console.log(this[i]);
+								}
+							}
+					Object.defineProperty(anek, "s9", {enumerable: false, value: "    шушунчик чай пьёт и газету читает"});
+					anek.pprint();
+					console.log("	 функция. В чемоданчике мужика была функция.");
+				let dimaZ = {
+					screams()
+					{
+						console.log("Дима Зуев: Ужас, у меня %s за последнюю лабу", this.labgrade);
+					},
+					cheers()
+					{
+						console.log("Дима Зуев: ого, у меня %s за последнюю лабу", this.newlabgrade);
+					}
+				};
+					Object.defineProperty(dimaZ, "labgrade", {writable: false, value: "неуд2"});
+					dimaZ.screams();
+					console.log("Дима Зуев: придется катать");
+					dimaZ.labgrade = "отл10";
+					dimaZ.screams();
+					console.log("Дима Зуев: ладно. сделаю сам.");
+					Object.defineProperty(dimaZ, "botal", {	set: function(value)
+																{
+																	this.newlabgrade = "хор5";
+																	return value;
+																}
+														  });
+					dimaZ.botal = 1;
+					dimaZ.cheers();
+			}
+			
+			{				
+				function jjpp()
+				{
+					console.log(this.psina);
+				}
+				
+				class teapot
+				{
+					ffunc()
+					{
+						this.psina = "что дальше? чайник с функцией печати в консоль?";
+						jjpp.call(this);
+					}
+				}
+				let tchay = new teapot();
+				console.log("***********************************************");
+				//это выделение, чтобы было легче искать глазами следующую строку в консоли
+				tchay.ffunc();
+				console.log("***********************************************");
+				//по-моему легче не стало. неважно.
+			}
+			
+			{
+				console.log("фокус с удвоением строки");
+				String.prototype.udvoenie = function() {
+					return this + this;
+						};
+				let bebra = "ooooo";		
+					console.log(bebra);
+					console.log(bebra.udvoenie());
+			}
+			
+			{
+				console.log("Трогательная история о том как Дима Зуев пересдавал диффуры");
+				class Student
+				{
+					set missedAssignments(value)
+					{
+						if (value < 1)
+							value = 1;
+						this._missedAssignments = value;
+					}
+					get missedAssignments()
+					{return this._missedAssignments;}
+					
+					#secret = "а мой брат кота купил";
+					tellus(sugar_level)
+					{
+						if (sugar_level >= 100)
+							console.log("Дима Зуев: ладно.", this.#secret);
+						else
+							console.log("Дима Зуев: нет");
+					}
+					constructor(dolgi)
+					{
+						this._missedAssignments = dolgi;
+					}
+				}
+				let dimaZ = new Student(3);
+					console.log("Дима Зуев: у меня %d пересдачи", dimaZ.missedAssignments);
+					dimaZ.missedAssignments = 2;
+					console.log("Дима Зуев: у меня %d пересдачи", dimaZ.missedAssignments);
+					dimaZ.missedAssignments = 1;
+					console.log("Дима Зуев: у меня %d пересдача", dimaZ.missedAssignments);
+					dimaZ.missedAssignments = 0;
+					console.log("Дима Зуев: у меня %d пересдача", dimaZ.missedAssignments);
+					console.log("Дима Зуев: так стоп");
+					console.log("После этих слов его больше никто не видел");
+				
+				let sugar_level = 15;
+					console.log("Димка, расскажи секрет");
+					dimaZ.tellus(sugar_level);
+					console.log("будем кормить Димочку сахаром, пока он не расколется");
+					for (;sugar_level <= 119; sugar_level += 20)
+					{
+						dimaZ.tellus(sugar_level);
+					}
+				
+				let bebra = {
+					switch() {
+								beebka = this.a;
+								this.a = this.b;
+								this.b = beebka;
+					}, 
+					a:"lupa",
+					b:"pupa"
+				};
+					console.log(bebra.a, "and", bebra.b);
+					bebra.switch();
+					console.log(bebra.a, "and", bebra.b);
+
+				class Bobr
+				{
+					a = "beeba";
+					b = "booba";
+				}
+				let bobra = new Bobr("bobra");
+					Object.assign(Bobr.prototype, bebra);
+					console.log(bobra.a, "and", bobra.b);
+					bobra.switch();
+					console.log(bobra.a, "and", bobra.b);
+				
+			}
+
+		</script>
+		
+	</head>
+	<body>		
+		<h1 style="margin-left: 0.5em">Анек про свинью в цирке.</h1>
+		<p style="margin-left: 3em">
+			Шоу в цирке: свинья, говорящая по-французски.<br>
+			Дрессировщик выводит свинью.<br>
+			Спрашивает её:<br>
+			- Парле Франце?<br>
+			И с ботинка ей в бок.<br>
+			Свинья:<br>
+			- Уиииии.<br>
+		</p>	
+	</body>
+</html>
