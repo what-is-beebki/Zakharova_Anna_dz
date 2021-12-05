@@ -189,7 +189,7 @@
 															this.nextElementSibling.insertBefore(mk_present(), this.nextElementSibling.firstElementChild.nextElementSibling);
 																		});
 			}
-			{
+			/*{
 				function paint()
 				{
 					this.style.color = "#0062A6";
@@ -204,15 +204,33 @@
 						beebki[i].addEventListener("mousedown", paint);
 						beebki[i].addEventListener("mouseup", unpaint);
 					}
-				/*аналогичная штуковина не работает и я не понимаю почему
+				аналогичная штуковина не работает и я не понимаю почему*/
+				/*function globalThis.paint()
+				{
+					this.style.color = "#0062A6";
+				}
+				function globalThis.unpaint()
+				{
+					this.style.color = "#000000";
+				}
+				let beebki = document.querySelectorAll("h2");
+					for (let i = 0; i < beebki.length; i++)
+					{
+						beebki[i].setAttribute("onmousedown", "globalThis.paint(event)");
+						beebki[i].setAttribute("onmouseup", "globalThis.unpaint(event)");
+					}
+				
+				//	beebki[0].removeEventListener("mouseup", unpaint);
+			}*/
+			globalThis["paint"] = function (event){event.target.style.color = "#0062A6";};
+			globalThis["unpaint"] = function (event){event.target.style.color = "#000";};
+			{
 				let beebki = document.querySelectorAll("h2");
 					for (let i = 0; i < beebki.length; i++)
 					{
 						beebki[i].setAttribute("onmousedown", "paint(event)");
-						beebki[i].setAttribute("onmouseup", "unpaint(event)");
-					}*/
-				
-					beebki[0].removeEventListener("mouseup", unpaint);
+						beebki[i].setAttribute("onmouseup", "globalThis.unpaint(event)");
+					}
 			}
 		</script>
 	</body>
