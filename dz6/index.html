@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">	
+		<title>mhmmmm</title>
+		
+		<style>
+			h2
+			{
+				background-color: #FFFFFF88;
+				margin: 1pt 0 1pt 1pt;
+			}
+			#davtjan_div
+			{
+				width: 728px;
+				height: 450px;
+				background-color: #E6E6FA;
+			}
+			#hooray
+			{
+				margin-left: 16px;
+				margin-bottom: 10px;
+				font-size: 18px;
+			}
+			good_class
+			{
+				font-size: 22pt;
+			}
+			
+			#mantext
+			{
+				color: #FF0000;
+				padding: 1em 0 1em 1.162em;
+			}
+			
+			img.present
+			{
+				position: absolute;
+				width: 50px;
+				height: 50px;
+			}
+		</style>
+	</head>
+	<body>
+	
+		<article>
+			<details style="padding: 2em 0 0 3.236em; background-color: #FDDDE6">
+				<summary id="summ"><h1>Задание</h1></summary>
+				<h2 class="replace_it">Обязательные:</h2>
+					<ul>
+						<li>Создать элемент (128)</li>
+						<li>Удалить элемент (141)</li>
+						<li>Навигация по дереву (143; вызов на 160)</li>
+						<li>Работа с атрибутом тега (136)</li>
+						<li>Использование переменной arguments (135)</li>
+					</ul>
+				<h2>Работа с потомками элементов</h2>
+					<ul>
+						<li>Первый потомок (165)</li>
+					</ul>
+				<h2>Работа с узлами	</h2>
+					<ul>
+						<li>Первый узел (173)</li>
+					</ul>
+				<h2>Работа с соседями</h2>
+					<ul>
+						<li>Следующий узел (176)</li>
+					</ul>
+				<h2>Добавление элемента</h2>
+					<ul>
+						<li>Вставка перед элементом (176)</li>
+					</ul>
+				<h2>Запросы</h2>
+					<ul>
+						<li>Поиск всех элементов по селектору (180)</li>
+					</ul>
+				<h2>Классы тегов</h2>
+					<ul>
+						<li>Переключение класса (183)</li>
+					</ul>
+				<h2>Тип эвента</h2>
+					<ul>
+						<li>Мышка (197)</li>
+					</ul>
+				<h2>Необходимо продемонстрировать в работе с событиями:</h2>
+					<ul>
+						<li>Остановка распространения эвента (121)</li>
+						<li><a onclick="event.preventDefault()" href="https://realhumanbean.net/bean/">Предотвращение стандартного действия (98)</a></li>
+						<li>Разные target (203-216)</li>
+						<li>Attribute event (add/remove) (217)</li>
+						<li>Remove event (225)</li>
+					</ul>
+			</details>
+
+			<section id="first_section">
+				<img src="galochka.jpg">
+
+			</section>
+			<section id="second_section">
+				<div id="davtjan_div">
+					
+					<button id="hooray">а мой брат кота купил</button>
+					<div style="position: relative;">
+						<img src="Davtjan.jpg" style="width: 328px; position: relative; left: 15px">
+					</div>
+				</div>
+			</section>
+			<section id="third_section">
+				<div onclick="alert(event.target.tagName)" style="background-color: #EEEEEE;">
+					<button style="margin: 1em">Жока</button>
+					<button onclick="event.stopPropagation()" style="margin: 1em">Бока</button>
+				</div>
+			</section>
+		</article>
+		<script>
+			'use strict'
+			{
+				let pic = document.createElement("img");
+					pic.src = "luntik.jpg";
+				let sec1 = document.getElementById("first_section");
+					sec1.appendChild(pic);
+				
+				function print_tagnames()
+				{
+					for (let i = 0; i < arguments.length; i++)
+						console.log(arguments[i].tagName);
+				}
+				print_tagnames(sec1, sec1.children[0], sec1.children[1]);
+				
+				let picrm = sec1.firstElementChild;
+					sec1.removeChild(picrm);
+				
+				function cursed_nodes(a, pnode, probs = "")
+				{
+					if (a > 2)//можно обрубить рекурсию а можно и не обрубать
+						return;
+					for (let i = 0; i < pnode.childNodes.length; i++)
+					{
+						if (pnode.childNodes[i].nodeType != 3) //иначе расплодятся undefined узлы-пустые тексты
+							console.log(probs, "node", pnode.childNodes[i].tagName, "has type", pnode.childNodes[i].nodeType, "and", pnode.childNodes[i].childNodes.length, "child node(s)");
+						cursed_nodes(++a, pnode.childNodes[i], probs + "    ");
+					}
+
+					return;
+				}
+
+				/*for (let i = 0; i < document.body.childNodes.length; i++)
+					console.log("node %s has type %d and %d child nodes", document.body.childNodes[i], document.body.childNodes[i].nodeType, document.body.childNodes[i].childNodes.length);	
+				*/
+				cursed_nodes(0, document.body);
+			}
+
+			{
+				let box = document.getElementById("davtjan_div");
+					box.firstElementChild.textContent = "Поздравляем!";
+					
+				let newp = document.createElement("p");
+					newp.textContent = "27.11.21 у нашего любимого Александра Георгиевича был день рождения!"
+					newp.style = "font-size: 16pt";
+					box.insertBefore(newp, box.firstElementChild);
+				
+				let sum = document.getElementById("summ");
+					sum.firstChild.textContent = "Задание Задание Задание";
+				let ins = document.createElement("p");
+					ins.textContent = "я в итоге не поняла, как делается этот трюк с <outer><inner />...</outer>"
+					sum.parentNode.insertBefore(ins, sum.nextSibling);	
+			}
+			
+			{
+				console.log("в моей статье %d раздела", document.querySelectorAll("section").length);
+				
+				console.log(document.querySelector("h2").className);
+				document.querySelector("h2").classList.replace('replace_it', 'with_it');
+				console.log(document.querySelector("h2").className);
+			}
+			{
+				function mk_present()
+				{
+					let newpic = document.createElement("img");
+						newpic.classList.add("present");
+					
+					newpic.style = "left: " + (Math.random()*263+15) + "px; top: " + Math.random()*278 + "px;";
+					newpic.src = "present.png";
+					return newpic;
+				}
+				let ladno = document.getElementById("hooray");
+					ladno.addEventListener("click", function gift(event){
+															//alert(this.textContent);
+															this.nextElementSibling.insertBefore(mk_present(), this.nextElementSibling.firstElementChild.nextElementSibling);
+																		});
+			}
+			/*{
+				function paint()
+				{
+					this.style.color = "#0062A6";
+				}
+				function unpaint()
+				{
+					this.style.color = "#000000";
+				}
+				let beebki = document.querySelectorAll("h2");
+					for (let i = 0; i < beebki.length; i++)
+					{
+						beebki[i].addEventListener("mousedown", paint);
+						beebki[i].addEventListener("mouseup", unpaint);
+					}
+				аналогичная штуковина не работает и я не понимаю почему*/
+				/*function globalThis.paint()
+				{
+					this.style.color = "#0062A6";
+				}
+				function globalThis.unpaint()
+				{
+					this.style.color = "#000000";
+				}
+				let beebki = document.querySelectorAll("h2");
+					for (let i = 0; i < beebki.length; i++)
+					{
+						beebki[i].setAttribute("onmousedown", "globalThis.paint(event)");
+						beebki[i].setAttribute("onmouseup", "globalThis.unpaint(event)");
+					}
+				
+				//	beebki[0].removeEventListener("mouseup", unpaint);
+			}*/
+			globalThis["paint"] = function (event){event.target.style.color = "#0062A6";};
+			globalThis["unpaint"] = function (event){event.target.style.color = "#000";};
+			{
+				let beebki = document.querySelectorAll("h2");
+					for (let i = 0; i < beebki.length; i++)
+					{
+						beebki[i].setAttribute("onmousedown", "paint(event)");
+						beebki[i].setAttribute("onmouseup", "globalThis.unpaint(event)");
+					}
+			}
+		</script>
+	</body>
+</html>
