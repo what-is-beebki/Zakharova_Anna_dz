@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">	
+		<title>mhmmmm</title>
+		
+		<style>
+			
+		</style>
+	</head>
+	<body>
+	
+		<article>
+			<details style="padding: 2em 0 2em 3.236em; background-color: #FDDDE6">
+				<summary id="summ"><h1>Задание</h1></summary>
+					<ol>
+						<li>Отправить данные на сервер через формы, и вывести</li>
+						<li>Отправить данные с помощью fetch и получить ответ</li>
+						<li>Отправить и получить данные с помощью WebSocket</li>
+					</ol>
+			</details>
+
+			<section>
+				<h2>1. Смешнявки не будет</h2>
+				<p>Скалярное произведение векторов</p>
+				<form action="scalar_prod.php" method="get">
+					<div>
+						<table>
+							<tr>
+								<td colspan="3" align="center"><h3>Вектор раз</h3></td>
+							</tr>
+							<tr>
+								<td><input name="x1" value=1></td>
+								<td><input name="x2" value=0></td>
+								<td><input name="x3" value=1></td>
+							</tr>
+							<tr>
+								<td colspan="3" align="center"><h3>Вектор два</h3></td>
+							</tr>
+							<tr>
+								<td><input name="y1" value=0></td>
+								<td><input name="y2" value=1></td>
+								<td><input name="y3" value=1></td>
+							</tr>
+						</table>
+					</div>
+					<button type="submit">пошёл</button>
+				</form>
+			</section>
+			<section>
+				<h2>2. Посмотрите в консоль</h2>
+				<h2>3. Пристрелите меня, потому что я не знаю, как запустить сервер</h2>
+				<p>Просто прописать в консоль <i>node server.js</i> не работает</p>
+			</section>
+		</article>
+		<script>
+			'use strict'
+			let aneks = {"1":"клюкало", "2":"бипки", "3":"шушунчик"}
+			fetch('cringe.php', {method: "post",  body: JSON.stringify(aneks)})
+				.then((response) => {return response.json();})
+				.then((data) => {console.log(data);});
+			
+			fetch('nice.php')
+				.then((response) => {return response.json();})
+				.then((data) => {console.log(data);});
+		</script>
+	</body>
+</html>
