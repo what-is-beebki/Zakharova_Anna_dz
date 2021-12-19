@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">	
+		<title>mhmmmm</title>
+		
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<p>Купил мужик шляпу</p>
+		<svg
+				viewBox="0 0 210 70"
+				version="1.1"
+				id="svg5"
+				xmlns="http://www.w3.org/2000/svg"
+				xmlns:svg="http://www.w3.org/2000/svg">
+			<defs id="defs2" />
+			<g id="layer1">
+				<path
+					style="fill: none; stroke: #000000; stroke-width: 0.25px;"
+					d="m 15.563942,27.986537 c 48.2625,0.571156 80.401202,3.804724 46.40625,-0.999518 C 51.442098,25.499165 51.258523,27.244943 48.976443,15.421154 47.187888,6.1543895 45.406731,17.420192 39.980769,11.1375 c -3.356447,-3.8864117 -2.960856,1.68605 -4.997597,9.709615 -1.7791,7.00861 -19.41923,7.139422 -19.41923,7.139422 z"
+					id="path42" />
+			</g>
+			<g id="layer1-1" transform="translate(0, 30)">
+				<path
+					style="fill: none; stroke: #000000; stroke-width: 0.25px;"
+					d="m 15.563942,27.986537 c 48.2625,0.571156 80.401202,3.804724 46.40625,-0.999518 C 51.442098,25.499165 51.258523,27.244943 48.976443,15.421154 47.187888,6.1543895 45.406731,17.420192 39.980769,11.1375 c -3.356447,-3.8864117 -2.960856,1.68605 -4.997597,9.709615 -1.7791,7.00861 -19.41923,7.139422 -19.41923,7.139422 z"
+					id="path42-4" />
+			</g>
+		</svg>
+		<p>Но шляпа оказалась с браком, поэтому ему пришлось купить вторую. Кстати она была ему как раз</p>
+		
+		<div><canvas id="creeper" style="background-color: #4CB341; border: 1px solid black;"></canvas></div>
+				
+		<svg
+			<defs id="defs22"> 
+				<filter id="f0" x="0" y="0">
+					<feGaussianBlur in="SourceGraphic" stdDeviation="5" />
+				</filter>
+			</defs>
+		</svg>
+		
+		<img src="Ъ.jpg" style="filter: url(#f0)"></img>
+		
+		<script>
+			'use strict'
+			{
+				let hat = document.getElementById("path42");
+					//console.log(hat.SegList);
+					console.log(hat.pathLength);
+			}
+			{
+				let canvas = document.getElementById("creeper");
+					canvas.height = 160;
+					canvas.width = 160;
+					
+				let ctx = creeper.getContext("2d");
+
+					ctx.fillStyle = "#385831";
+					ctx.fillRect(20, 40, 40, 40);
+					ctx.fillRect(100, 40, 40, 40);
+					ctx.fillRect(60, 80, 40, 60);
+					ctx.fillRect(40, 100, 20, 60);
+					ctx.fillRect(100, 100, 20, 60);
+					ctx.fillStyle = "black";
+					ctx.fillRect(40, 60, 20, 20);
+					ctx.fillRect(100, 60, 20, 20);
+					ctx.fillRect(60, 100, 40, 20);
+					ctx.fillRect(40, 120, 80, 20);
+			}
+		</script>
+	</body>
+</html>
